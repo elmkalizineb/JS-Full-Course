@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rock - paper - scissors game </title>
+</head>
+<body>
+    <h2>
+        Rock Paper Scissors 
+    </h2>
+    <br>
+    <p>
+        <button
+        onclick="
+            let Computer=Math.random();
+            if(Computer>=0 && Computer < 1/3){
+                alert(` Computer  : Rock  \n You  : Rock \n    Tie   `)
+            }
+            if(Computer>=1/3 && Computer < 2/3){
+                alert(` Computer  : Paper  \n You  : Rock \n   Computer wins   `)
+            }
+            if(Computer>=2/3 && Computer <=1){
+               alert(` Computer  : Scissors \n You  : Rock \n   You   Won  😤 `)
+            }
+
+           
+        "> Rock  </button>
+
+        <button
+        onclick="
+             Computer=Math.random();
+            if(Computer>=0 && Computer < 1/3){
+                alert(` Computer  : Rock  \n You  : Papper  \n    , You Won 😤 `)
+            }
+            if(Computer>=1/3 && Computer < 2/3){
+                alert(` Computer  : Paper  \n You  : Paper \n   Tie     `)
+            }
+            if(Computer>=2/3 && Computer <=1){
+               alert(` Computer  : Scissors \n You  :  Paper \n    Computer wins    `)
+            }
+        ">  </button>
+
+        <button
+        onclick="
+             Computer=Math.random();
+            if(Computer>=0 && Computer < 1/3){
+                alert(` Computer  : Rock  \n You  : scissors  \n   computer wins   `)
+            }
+            if(Computer>=1/3 && Computer < 2/3){
+                alert(` Computer  : Paper  \n You  :  scissors \n  You win  😤   `)
+            }
+            if(Computer>=2/3 && Computer <=1){
+               alert(` Computer  : Scissors \n You  : Scissors  \n    Tie    `)
+            }
+        "> Scissors  </button>
+    </p>
+    <script>
+
+    </script>
+</body>
+</html>

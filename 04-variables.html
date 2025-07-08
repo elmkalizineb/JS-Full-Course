@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables</title>
+    <style>
+      .button {
+        background: antiquewhite;
+        height: 50px;
+        width: 100px;
+        font-size: small;
+        border: 2px solid white;
+        color: black;
+        border-radius: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      title="good job "
+      class="button"
+      onclick="
+        alert(` hello there `);
+    "
+    >
+      Click here
+    </button>
+
+    <script>
+      /** 1 - variables : */
+
+      let variable = 3; /** declare a variable  using let  */
+      console.log(variable);
+      variable = 5; // update a variable
+
+      /**  variable name can`t use special characters except $ , _ :
+       *   let name@!#%^* =3 , let name two = 2  <-- flase declarations
+       *   let _name = 3 , let $name = 3  <-- possible
+       */
+
+      let calculation = 2 + 2;
+
+      console.log(calculation);
+
+      console.log(calculation + 2);
+
+      let message = `hello there `; //  declare a string
+
+      const v = 3; // constant can`t be updated
+       
+      /* type of variables */ 
+      console.log(typeof variable);
+      console.log(typeof message);
+      console.log(typeof v);
+
+      /* Exercices : */
+      let name =`Zineb `;
+      console.log(` My name is ${name}`);
+
+      const cost = 5+ 2*3+9 ;
+      console.log(` Cost of food : $${cost}`);
+
+      const tax = 0.1*cost ;
+      console.log(` Tax (10%) : $${tax}`);
+
+      const totalCost = cost - tax;
+      console.log(` Total cost  : $${totalCost}`);
+
+      
+
+    </script>
+  </body>
+</html>

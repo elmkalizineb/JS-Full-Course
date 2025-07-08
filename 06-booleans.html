@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booleans / ifelse</title>
+    <style>
+      .button {
+        background: antiquewhite;
+        height: 50px;
+        width: 100px;
+        font-size: small;
+        border: 2px solid white;
+        color: black;
+        border-radius: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      /** 1 - booleans  : */
+      true;
+      false;
+      console.log(3 > 4);
+
+      /* Comparison Operators : 
+            > greater >= greater or equal 
+            same thing for < 
+            === equal to / !== not equal  ( evaluating without converting to the same value ) 
+            == equal to / != not equal : convert two sides into the same type and evaluate  
+        */
+      console.log(5 === `5.00`);
+
+      /* Falsy values :  False ,0 ,Nan (not a number ) ,undefined ,null 
+            any value is not this list is truthy value 
+        */
+
+      const c = 5; //  truthy value
+      /*
+           c= 0 false 
+           c< 0  false 
+           c>= 0 */
+      if (c) {
+        // c>= 0
+        console.log(`cart has products `);
+      }
+
+      /* If statements 
+            if (condition ){
+             // code 
+            } else if{
+                //code 
+            }else { // code 
+            }
+
+        */
+      if (42 > 111) {
+        console.log(`hello`);
+      } else {
+        console.log(`else `);
+      }
+      /*-----------*/
+      /* Ternary operator (shortcut of if )  : condition ? true : false */
+      console.log(2 > 5 ? 2 + 5 : 2 - 5);
+
+      /* Guard operator :  shortcut of an if statement like this 
+            if(condition){
+            console.log(`hello `);
+            }
+        */
+      false && console.log(`hello `);
+      /*-----------------*/
+      /* Default opeartor : 
+
+            if(!condition){
+                currency = `USD `
+            }
+        */
+       /*-------------*/
+      const currency1 = ` Da ` || `USD `;
+      console.log(currency1);
+      /* Default opeartor : 
+
+            if(!condition){
+            shortcut of an if statement like this : 
+                currency = `USD `
+            }
+        */
+      const currency2 = undefined || `USD `;
+      console.log(currency2);
+    </script>
+  </body>
+</html>
