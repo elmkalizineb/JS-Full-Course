@@ -1,42 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objects </title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
     <script>
-         // create an object 
+      // create an object
 
-         const product ={
-            name :`Pc Laptop `,
-            price : 109000
-         };
+      const product = {
+        name: `Pc Laptop `,
+        price: 109000,
+      };
 
-         console.log(product);
-         console.log(product.name);
-         console.log(product.price);
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
 
-         product.name =`Laptop `;
+      product.name = `Laptop `;
 
-         console.log(product);
+      console.log(product);
+
+      // add a property to an object
+      product.newProperty = true;
+
+      console.log(product);
+
+      // delete a property
+      delete product.newProperty;
+
+      console.log(product);
+
+      const user = {
+        firstName: `Zineb`,
+        lastName: `Elmkali `,
+        age: 24,
+        adress: `Rais hamidou , Alger `,
+        language: {
+          // nested object
+          label: `arabic`,
+          level: `good `,
+        },
+
+        fun: function Name() {
+          console.log(
+            `  Hello , my name is ${this.firstName} ${this.lastName} `
+          );
+        },
+      };
+
+      console.log(user);
+
+      console.log(user.firstName);
+
+      console.log(user[`firstName`]);
+
+      user.ID = 121;
+
+      console.log(user[`ID`]); // undifined
+
+      user.ID = 121;
+
+      console.log(user);
+
+      user.fun();
+
+      // JSON object : similar to JS object but with less features
+      /*
+            -  does`t support functions 
+            -  supported in all languages : universal syntax 
+            -  we use it to send data between computers and when to store data 
+         */
+
+      user2 = JSON.stringify(user); // convert  an Object to JSON object
+      console.log(user2);
+
+      user3 = JSON.parse(user2); // Json object to an object
+      console.log(user3);
+
+      const obj1 = {
+        message: `hello `,
+      };
+
+      const obj2 = obj1; // copy of refrence
+
+      object1.message = `good job `;
+      console.log(obj1);
+      console.log(obj2);
+
+      const obj3 = {
+        message: `good job `,
+      };
+
+      console.log(obj1 === obj3); // compare the refrence not the content of the object
+
+      const object4 ={
+            message : `hello `,
+            price: 123
+        }
+        const {message, price }=object4;  // shortcut of : const message = object4.message;
 
 
-         // add a property to an object 
-         product.newProperty = true;
+        const obj5 ={
+            message : message , 
 
-         console.log(product);
+            method(){ // shortcut to declaring a method inside an object 
+                console.log(`method`);
+            }
+        }
 
-         // delete a property 
-         delete product.newProperty;
-         
-         console.log(product);
-
-         
-
-         
-
+        obj5.method();
     </script>
-</body>
+  </body>
 </html>
