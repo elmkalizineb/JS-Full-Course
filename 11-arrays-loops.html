@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays and Loops</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      let array = [10, 2, 3]; // Arrays
+
+      console.log(array);
+
+      console.log(array[1]);
+
+      console.log(Array.isArray([1, 2]));
+
+      console.log(array.length);
+
+      // add an element to an array
+      array.push(120);
+      console.log(array);
+
+      // delete a value
+      array.splice(0, 1);
+      console.log(array);
+
+      // Loops
+      // exercices :
+      const nums = [10, 20, 30];
+      console.log(nums);
+      nums[2] = 99;
+      console.log(nums);
+
+      function getLastValue(array = []) {
+        return array[array.length - 1];
+      }
+
+      console.log(getLastValue(nums));
+
+      function arraySwap(array = []) {
+        let x = array[array.length - 1];
+
+        array[array.length - 1] = array[0];
+
+        array[0] = x;
+
+        return array;
+      }
+
+      const t = arraySwap(nums);
+      console.log(t);
+    </script>
+  </body>
+</html>

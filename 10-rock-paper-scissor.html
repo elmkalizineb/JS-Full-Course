@@ -3,63 +3,95 @@
   <head>
     <title>Rock Paper Scissors</title>
     <style>
-      body{
-        background-color: rgb(25, 25,25);
+      body {
+        background-color: rgb(25, 25, 25);
         color: white;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: "Courier New", Courier, monospace;
       }
-      .title{
+      .container{
+        border: 3px solid white ;
+        padding: 20px 150px ; 
+        box-sizing: border-box;
+      }
+      .title {
         font-size: 30px;
         font-weight: bold;
       }
-      
 
+      .move-icon {
+        height: 50px;
+      }
+      .move-button {
+        background-color: transparent;
+        border: 3px solid white;
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        margin-right: 15px;
+        cursor: pointer;
+      }
+      .result {
+        font-size: 25px;
+        font-weight: bold;
+        margin: 15px 15px;
+      }
+      .score {
+        margin-top: 50px;
+      }
+      .reset-score {
+        background-color: white;
+        border: none;
+        padding: 10px;
+        width: 100px;
+        border-radius: 50px;
+        margin-left: 80px;
+      }
     </style>
   </head>
   <body>
-    <p class="title">Rock Paper Scissors</p>
-    <button
-      onclick="
-      playGame('rock');
-    "
-    >
-      <img  class="image" src="images/rock-emoji.png" alt="rock" >
-    </button
+    <div class="container">
+      <p class="title">Rock Paper Scissors</p>
+      <button
+        onclick="
+        playGame('rock');
+      "
+        class="move-button"
+      >
+        <img class="move-icon" src="images/rock-emoji.png" alt="rock" />
+      </button>
 
-    <button
-      onclick="
-      playGame('paper');
-    "
-    >
-      <img  class="image" src="images/paper-emoji.png" alt="paper" >
-    </button>
+      <button onclick=" playGame('paper');" class="move-button">
+        <img class="move-icon" src="images/paper-emoji.png" alt="paper" />
+      </button>
 
-    <button
-      onclick="
-      playGame('scissors');
-    "
-    >
-      <img class="image" src="images/scissors-emoji.png" alt="scissors" >
-    </button>
+      <button
+        onclick="
+        playGame('scissors');
+      "
+        class="move-button"
+      >
+        <img class="move-icon" src="images/scissors-emoji.png" alt="scissors" />
+      </button>
 
-    <p class="result"></p>
-    <br>
-    <p class="game"></p>
-    <br>
-    <p class="game-score"></p>
+      <p class="result"></p>
+      <br />
+      <p class="game"></p>
+      <br />
+      <p class="game-score score"></p>
 
-    <button
-      onclick="
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      updateScoreElement();
-    "
-    >
-      Reset Score
-    </button>
-
+      <button
+        onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+      "
+        class="reset-score"
+      >
+        Reset Score
+      </button>
+    </div>
     <script>
       let score = JSON.parse(localStorage.getItem("score")) || {
         wins: 0,
@@ -108,8 +140,6 @@
           } else if (computerMove === "scissors") {
             result = "You win.";
           }
-
-
         }
 
         if (result === "You win.") {
@@ -124,14 +154,12 @@
 
         localStorage.setItem("score", JSON.stringify(score));
 
+        document.querySelector(".result").innerHTML = ` ${result} .   `;
+
         document.querySelector(
-          ".result"
-        ).innerHTML = ` ${result } .   `;
-
-         document.querySelector(
           ".game "
-        ).innerHTML = `  Computer ${computerMove}  - You ${playerMove}  \n `;
-
+        ).innerHTML = ` Computer <img src="images/${computerMove}-emoji.png" class="move-icon"> 
+      <img src="images/${playerMove}-emoji.png" class="move-icon"> You  `;
       }
 
       function updateScoreElement() {
