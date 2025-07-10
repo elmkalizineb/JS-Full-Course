@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO DO LIST -12-</title>
+    <style>
+      body {
+        font-family:  "Arial Narrow", Arial, sans-serif;
+      }
+      .title{
+        font-size: large;
+        font-weight: bold;
+        padding-left: 15vw;
+      }
+      .todo-grid , .todo-input-grid {
+        display: grid;
+        grid-template-columns: 200px 150px 100px;
+        column-gap: 10px;
+        row-gap: 10px ;
+
+      }
+      .todo-input-grid{
+        margin-bottom: 10px;
+      }
+
+      .todo-input-date, .todo-input-name{
+        height: 35px;
+        text-indent: 4px;
+        border: 1px solid black;
+        font-size: 15px;
+        padding: 6px;
+      }
+      .add-button{
+        background-color: yellowgreen;
+        padding: 6px;
+      }
+      .delete-button{
+        background-color: red;
+        width: 100px;
+        height: 35px;
+        padding:6px ;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p class="title">Todo List</p>
+    <div class="todo-input-grid">
+      <input
+        type="text"
+        name="todo-name"
+        placeholder="Todo name"
+        class="todo-input-name"
+      />
+      <input type="date" name="date" class="todo-input-date" />
+      <button onclick="addTodo();" class="add-button">Add</button>
+    </div>
+    <div class="to-do-list todo-grid"></div>
+
+    <script src="scripts/12-to-do-list.js"></script>
+  </body>
+</html>

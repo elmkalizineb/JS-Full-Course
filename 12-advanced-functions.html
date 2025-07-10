@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced functions</title>
+  </head>
+  <body>
+    <button onclick="" class="js-button"> Click here </button>
+    <script>
+        // functions are values : everything we do with values , we can do  it with functions 
+      greeting(); // Hoisting : it doesn`t matter if we call the function before declaring  it
+      function greeting() {
+        console.log(`hello`);
+      }
+      greeting();
+
+      //  another way to declare a function  :  (hoisting isn`t possible )
+
+      const fun1 = function () {
+        console.log(`hello my name is zineb `);
+      };
+      console.log(fun1);
+      console.log(typeof fun1);
+      fun1();
+
+      // function saved inside an object
+      const obj = {
+        Id: 2,
+        name: `zineb`,
+        fun: function greeting() {
+          console.log(` HELLO , My name is ${this.name}`);
+        },
+      };
+
+      obj.fun();
+
+      // parametres
+      function display(params) {
+        console.log(params);
+      }
+      display(2);
+
+      // pass a function into a function
+
+      function run(param) {
+        param();
+      }
+      run(function() {
+        console.log(`hello4`)
+      });
+
+      //  setTimeout  : wait 3 seconds after run the function 
+
+      setTimeout(function () {
+        console.log(`timeout`);
+      },3000);
+
+      console.log(`next line `);
+
+      // seInterval : run the function every 3 seconds 
+
+      let interval = setInterval(function () {
+        console.log(`Interval`);
+      },3000);
+
+      console.log(` next line 2`);
+
+      clearInterval(interval);
+
+      // forEach method 
+
+      [" zineb" , "khedaoudj" ,  "fella ", "meriem "].forEach(function (value , index) {
+        if(value ===`fella`){ //  to skip a value 
+          return;
+        }
+        console.log(`${index} : ${value}`);
+      });
+
+      // Arrow Functions 
+
+      const arrowFunction = (param1,param2) =>{
+        console.log(`arrow function 1 `  );
+      };
+
+      arrowFunction();
+
+      const ArrowFunction2 = (param1,param2) =>{
+        console.log(` another way to declare an arrow function `);
+      }
+
+      ArrowFunction2();
+      
+      const oneParam = param =>{
+        console.log( param +10);
+      }
+      oneParam(10);
+
+      const oneLine = () => console.log(2+3);
+      oneLine();
+
+
+      [`waching dishes `, `Cleaning `].forEach((value, index) => {
+        console.log(`${index} : ${value}`);
+
+      });
+
+      const buttonElement = document.querySelector(".js-button");
+
+      buttonElement.addEventListener(`click`,() =>{
+        console.log(`click`);
+      });
+
+      buttonElement.addEventListener(`click`,() =>{
+        console.log(`click2`);
+      });
+
+    </script>
+  </body>
+</html>

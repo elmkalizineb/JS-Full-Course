@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12 - Advanced Function exercices</title>
+  </head>
+
+  <button
+    onclick="
+     document.querySelector(`.start`).innerHTML=`Loading`;
+    setFinished();
+    "
+    class="start"
+  >
+    Start
+  </button>
+
+  <button
+    onclick="
+     setAdded();
+    "
+    class="add-to-cart"
+  >
+    Add to Cart
+  </button>
+  <p class="p-added"></p>
+  <body>
+    <script>
+      const add = function () {
+        console.log(2 + 3);
+      };
+      add();
+      add();
+      // take a function as parameter and run it twice
+      function runTwice(param) {
+        param();
+        param();
+      }
+      runTwice(add);
+
+      runTwice(function () {
+        console.log(`12b`);
+      });
+
+      function setFinished() {
+        setTimeout(function () {
+          document.querySelector(".start").innerHTML = `Finished`;
+        }, 2000);
+      }
+
+      function setAdded() {
+        setTimeout(function () {
+          document.querySelector(".p-added").innerHTML = `Added`;
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
